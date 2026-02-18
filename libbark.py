@@ -1,7 +1,7 @@
 import os
 import time
 
-version = "1.0.0"
+version = "1.1.0"
 
 def version():
     return version
@@ -10,8 +10,11 @@ def check():
     if not os.path.exists("logFile"):
         f = open("logFile","w")
         f.close()
+
 def log(logLevel, logMessage):
     check()
+    if logLevel == "-1":
+        logLevel = "G"
     if logLevel == "0":
         logLevel = "I"
     if logLevel == "1":
@@ -23,3 +26,8 @@ def log(logLevel, logMessage):
 
     f = open("logFile","a")
     f.write(logLevel + " " + logMessage + " " + str(round(time.time(),2)) + "\n")
+
+def clear():
+    if os.path.exists("logFile"):
+        os.remove("logFile")
+        check()

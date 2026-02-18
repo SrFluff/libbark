@@ -5,7 +5,7 @@
 `version()`                 - Returns the current version\
 `check()`                   - If no `logFile` is found, one is created\
 `log(logLevel, logMessage)` - Logs a message with a specific level\
-`clear()`                   - Clears the log\
+`clear()`                   - Clears the log
 
 ## Log levels
 
